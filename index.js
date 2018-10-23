@@ -8,7 +8,7 @@ const LaunchRequestHandler = {
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
   },
   handle(handlerInput) {
-    const speechText = 'Welcome to the Alexa Skills Kit, you can say hello!';
+    const speechText = 'Welcome to the Alexa Skills Kit, you can say find me a drink, pick a brewery, or surprise me';
 
     return handlerInput.responseBuilder
       .speak(speechText)
@@ -18,20 +18,22 @@ const LaunchRequestHandler = {
   },
 };
 
-const HelloWorldIntentHandler = {
-  canHandle(handlerInput) {
-    return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-      && handlerInput.requestEnvelope.request.intent.name === 'HelloWorldIntent';
-  },
-  handle(handlerInput) {
-    const speechText = 'Hello World!';
 
-    return handlerInput.responseBuilder
-      .speak(speechText)
-      .withSimpleCard('Hello World', speechText)
-      .getResponse();
-  },
-};
+
+// const HelloWorldIntentHandler = {
+//   canHandle(handlerInput) {
+//     return handlerInput.requestEnvelope.request.type === 'IntentRequest'
+//       && handlerInput.requestEnvelope.request.intent.name === 'HelloWorldIntent';
+//   },
+//   handle(handlerInput) {
+//     const speechText = 'Hello World!';
+//
+//     return handlerInput.responseBuilder
+//       .speak(speechText)
+//       .withSimpleCard('Hello World', speechText)
+//       .getResponse();
+//   },
+// };
 
 const HelpIntentHandler = {
   canHandle(handlerInput) {
@@ -95,7 +97,7 @@ const skillBuilder = Alexa.SkillBuilders.custom();
 exports.handler = skillBuilder
   .addRequestHandlers(
     LaunchRequestHandler,
-    HelloWorldIntentHandler,
+    //HelloWorldIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
     SessionEndedRequestHandler
