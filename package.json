@@ -6,12 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["alexa", "skill", "brewery"],
+  "keywords": [
+    "alexa",
+    "skill",
+    "brewery"
+  ],
   "author": "Brendan Woodell",
   "license": "ISC",
   "dependencies": {
     "alexa-app": "^4.2.2",
     "ask-sdk": "^2.1.0",
-    "ask-sdk-core": "^2.1.0"
+    "ask-sdk-core": "^2.1.0",
+    "xmlhttprequest": "^1.8.0"
   }
 }
